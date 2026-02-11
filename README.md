@@ -2,8 +2,6 @@
 
 An interactive and educational tool built with Next.js that brings file system allocation strategies to life. See how Contiguous, Linked, and Indexed allocation methods work by creating, deleting, and resizing files on a simulated disk.
 
-![File System Visualizer Screenshot](https://i.imgur.com/kYqA7vj.png)
-
 ## ✨ Features
 
 - **Interactive Grid:** A visual representation of disk blocks, showing how files are allocated in real-time.
