@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 210 40% 98%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 210 40% 98%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222 89% 58%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 215 14% 91%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 222 89% 58%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222 89% 58%;
+    --radius: 0.5rem;
+    --file-linked: 142.1 76.2% 36.3%;
+    --file-indexed: 262.1 83.3% 57.8%;
+  }
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --card: 224 65% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217.2 91.2% 59.8%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 25.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
+    --file-linked: 142.1 70.2% 46.3%;
+    --file-indexed: 262.1 80.3% 67.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom success colors */
+.bg-success {
+  background-color: hsl(var(--success));
+}
+.text-success-foreground {
+  color: hsl(var(--success-foreground));
+}
+
+@layer utilities {
+  .animated-gradient-text {
+    @apply bg-gradient-to-r from-primary to-pink-500 via-purple-500;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 3s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, hsl(var(--border) / 0.25) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.25) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: bg-scroll 60s linear infinite;
+  }
+}
